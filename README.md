@@ -14,3 +14,9 @@ In terms of uncertainty, placing priors in the vector of weights mean we can der
 
 ## Gradient Boosting
 TODO, but thinking here about much of the same as above, using shallow neural nets, MCMC methods for the weighting to the model on the residuals. Explainability could be in the form of the last n models being used as a surrogate.
+
+## Neural Nets
+For now two main ideas wrt tabular data:
+
+1. Additive decompositions of NNs by isolating features (passing it through the NN in isolation) and applying a weighting to the components. The model can be simplified by dropping features with an absolute weighting below some threshold
+2. Finding an heuristic for a trained, deep NN. Conceptually, it is a short-cut to come to a conclusion by finding some simple representation of a deep NN. The error is expected to increase, but short paths (perhaps based on input) may be found in the NN which can make the network simpler to work with and conceptualise. For example, have it output a pipeline of simple transformations which can act as a heuristic under certain conditions.
